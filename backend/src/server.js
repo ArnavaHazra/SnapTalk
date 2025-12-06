@@ -4,13 +4,23 @@ import { connetDB } from "./config/db.js";
 
 const app = express();
 
-connetDB();
-
 app.get("/", (req, res) => {
     res.send("Hello from server");
 })
 
-app.listen(ENV.PORT, () => {
-    console.log("server is UP & running on PORT:", ENV.PORT)
-    console.log(`http://localhost:${ENV.PORT}`)
-})
+const startServer = async () => {
+    try {
+        await connetDB();
+        console.log("Mongo_db connected!");
+
+        app.listen( ENV.PORT, () => {
+        console.log("Server is running on PORT:", ENV.PORT)
+        console.log(`http://localhost:${ENV.PORT}`)
+        })
+    } catch (error) {
+        console.error("Failed to start server", error.message);
+        process.exit(1);
+    }
+}
+
+startServer();
