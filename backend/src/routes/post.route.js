@@ -5,7 +5,8 @@ import {
     deletePost,
     getPost, 
     getPosts, 
-    getUserPosts
+    getUserPosts,
+    likePost
 } from "../controllers/post.controller.js";
 
 import { protectRoute } from "../middleware/auth.middleware.js";
