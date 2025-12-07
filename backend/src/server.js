@@ -46,10 +46,14 @@ const startServer = async () => {
         await connetDB();
         console.log("Mongo_db connected!");
 
-        app.listen( ENV.PORT, () => {
-        console.log("Server is running on PORT:", ENV.PORT)
-        console.log(`http://localhost:${ENV.PORT}`)
-        })
+        //listen for local dev
+        if(ENV.NODE_ENV !== "production") {
+            app.listen( ENV.PORT, () => {
+            console.log("Server is running on PORT:", ENV.PORT)
+            console.log(`http://localhost:${ENV.PORT}`)
+            })
+        }
+
     } catch (error) {
         console.error("Failed to start server", error.message);
         process.exit(1);
@@ -57,3 +61,6 @@ const startServer = async () => {
 }
 
 startServer();
+
+//export for deployment
+export default app;
