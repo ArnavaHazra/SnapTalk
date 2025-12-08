@@ -15,7 +15,7 @@ export const getUserProfile = asyncHandler(async (req, res) => {
         });
     }
 
-    res.status(200).json({ username })
+    res.status(200).json({ user })
 })
 
 export const updateProfile = asyncHandler(async (req, res) => {
