@@ -56,7 +56,7 @@ const TabsLayout = () => {
         />
 
         <Tabs.Screen 
-            name="message"
+            name="messages"
             options={{
                 title: "",
                 tabBarIcon: ({ color, size }) => <Feather name="mail" size={size}
