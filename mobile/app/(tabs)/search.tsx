@@ -1,14 +1,16 @@
 import { Feather } from "@expo/vector-icons";
-import { View, TextInput, ScrollView, Text, TouchableOpacity } from "react-native";
+
+import { View, Text, ScrollView, TextInput, TouchableOpacity } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const TRENDING_TOPICS = [
-  { topic: "#ReactNative", tweets: "125K" },
-  { topic: "#TypeScript", tweets: "89K" },
-  { topic: "#WebDevelopment", tweets: "234K" },
-  { topic: "#AI", tweets: "567K" },
-  { topic: "#TechNews", tweets: "98K" },
+  { topic: "#react_native", tweets: "125K" },
+  { topic: "#ai", tweets: "987K" },
+  { topic: "#tech_news", tweets: "10K" },
+  { topic: "#expo", tweets: "320K" },
+  { topic: "#indian_devs", tweets: "109K" },
 ];
+
 
 const SearchScreen = () => {
   return (
