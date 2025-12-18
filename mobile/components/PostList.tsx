@@ -18,7 +18,7 @@ const PostsList = ({ username }: { username?: string }) => {
     return (
       <View className="p-8 items-center">
         <ActivityIndicator size="large" color="#1DA1F2" />
-        <Text className="text-gray-500 mt-2">Loading posts...</Text>
+        <Text className="text-gray-500 mt-2 font-semibold ml-2">Loading posts...</Text>
       </View>
     );
   }
