@@ -26,13 +26,13 @@ const NotificationCard = ({ notification, onDelete }: NotificationCardProps) => 
   const getNotificationIcon = () => {
     switch (notification.type) {
       case "like":
-        return <Feather name="heart" size={22} color="#E0245E" />;
+        return <Feather name="heart" size={20} color="#E0245E" />;
       case "comment":
-        return <Feather name="message-circle" size={22} color="#1DA1F2" />;
+        return <Feather name="message-circle" size={20} color="#1DA1F2" />;
       case "follow":
-        return <Feather name="user-plus" size={22} color="#17BF63" />;
+        return <Feather name="user-plus" size={20} color="#17BF63" />;
       default:
-        return <Feather name="bell" size={22} color="#657786" />;
+        return <Feather name="bell" size={20} color="#657786" />;
     }
   };
 
@@ -48,7 +48,7 @@ const NotificationCard = ({ notification, onDelete }: NotificationCardProps) => 
   };
 
   return (
-    <View className="border-b border-gray-200 px-4 bg-white">
+    <View className="border-b border-gray-200 px-4 bg-slate-50">
       <View className="flex-row p-4">
         <View className="relative mr-3">
           <Image
@@ -56,7 +56,7 @@ const NotificationCard = ({ notification, onDelete }: NotificationCardProps) => 
             className="size-12 rounded-full"
           />
 
-          <View className="abolute -bottom-1 -right-1 size-6 bg-white items-center justify-center py-3">
+          <View className="abolute -bottom-1 -right-1 size-10 bg-slate-50 items-center justify-center">
             {getNotificationIcon()}
           </View>
         </View>

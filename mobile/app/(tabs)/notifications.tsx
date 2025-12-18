@@ -52,7 +52,7 @@ const NotificationsScreen = () => {
         {isLoading ? (
           <View className="flex-1 items-center justify-center p-8">
             <ActivityIndicator size="large" color="#1DA1F2" />
-            <Text className="text-gray-500 mt-4">Loading notifications...</Text>
+            <Text className="text-gray-500 mt-4 font-bold ml-2">Loading notifications...</Text>
           </View>
         ) : notifications.length === 0 ? (
           <NoNotificationsFound />
