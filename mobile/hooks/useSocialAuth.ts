@@ -6,13 +6,13 @@ import { Alert } from "react-native";
 WebBrowser.maybeCompleteAuthSession();
 
 export const useSocialAuth = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState("");
   const { startSSOFlow } = useSSO();
 
   const handleSocialAuth = async (
     strategy: "oauth_google" | "oauth_apple"
   ) => {
-    setIsLoading(true);
+    setIsLoading(strategy);
     try {
       const { createdSessionId, setActive } =
         await startSSOFlow({ strategy });
@@ -28,7 +28,7 @@ export const useSocialAuth = () => {
         `Failed to sign in with ${provider}. Please try again.`
       );
     } finally {
-      setIsLoading(false);
+      setIsLoading("");
     }
   };
 

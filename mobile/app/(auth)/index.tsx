@@ -26,7 +26,7 @@ export default function Index() {
               <TouchableOpacity 
                 className="flex-row items-center justify-center bg-white border border-grey-300 rounded-full py-4 px-3"
                 onPress={ () => handleSocialAuth("oauth_google") }
-                disabled={isLoading}
+                disabled={!!isLoading}
                 style={{
                   shadowColor: "#000",
                   shadowOffset: { width: 0, height: 1 },
@@ -36,28 +36,29 @@ export default function Index() {
                 }}
               >
 
-              {isLoading ? (
-                <ActivityIndicator size="small" color="#4285F4" />
-              ) : (
-                <View className="flex-row items-center justify-center">
-                  <Image 
-                    source={require("../../assets/images/google.png")}
-                    className="size-10 mr-3"
-                    resizeMode="contain"
-                  />
-                  <Text className="text-black font-medium text-xl">
-                    Continue with Google
-                  </Text>
-                </View>
-              )}
-              
+                {isLoading === "oauth_google" ? (
+                  <ActivityIndicator size="small" color="#4285F4" className="size-8"/>
+                ) : (
+                  <View className="flex-row items-center justify-center">
+                    <View className="w-8 h-8 mr-5 ml-2 items-center justify-center">
+                      <Image
+                        source={require("../../assets/images/google.png")}
+                        className="w-10 h-10"
+                        resizeMode="contain"
+                      />
+                    </View>
+                    <Text className="text-black font-medium text-xl">
+                      Continue with Google
+                    </Text>
+                  </View>
+                )}
               </TouchableOpacity>
 
             {/* APPLE BUTTON */}
               <TouchableOpacity 
-                className="flex-row items-center justify-center bg-white border border-grey-300 rounded-full py-5 px-3"
+                className="flex-row items-center justify-center bg-white border border-grey-300 rounded-full py-4 px-3"
                 onPress={ () => handleSocialAuth("oauth_apple") }
-                disabled={isLoading}
+                disabled={!!isLoading}
                 style={{
                   shadowColor: "#000",
                   shadowOffset: { width: 0, height: 1 },
@@ -67,22 +68,22 @@ export default function Index() {
                 }}
               >
 
-              {isLoading ? (
-                <ActivityIndicator size="small" color="#000" />
-              ) : (
-                <View className="flex-row items-center justify-center">
-                  <Image 
-                      source={require("../../assets/images/apple.png")}
-                      className="size-7 mr-5"
-                      resizeMode="contain"
-                    />
-                      <Text className="text-black font-medium text-xl">
-                          Continue with Apple
-                      </Text> 
-                </View>
-              )}
-                
-
+                {isLoading === "oauth_apple" ? (
+                  <ActivityIndicator size="small" color="#000" className="size-8"/>
+                ) : (
+                  <View className="flex-row items-center justify-center">
+                    <View className="w-8 h-8 mr-5 items-center justify-center">
+                      <Image
+                        source={require("../../assets/images/apple.png")}
+                        className="w-7 h-7"
+                        resizeMode="contain"
+                      />
+                    </View>
+                    <Text className="text-black font-medium text-xl">
+                        Continue with Apple
+                    </Text> 
+                  </View>
+                )}
               </TouchableOpacity>
 
           </View>
